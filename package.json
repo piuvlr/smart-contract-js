@@ -10,9 +10,9 @@
 		"start": "node chaincode-smart.js"
 	},
 	"engine-strict": true,
-	"license": "Apache-2.0",
+	"license": "MIT",
 	"dependencies": {
-		"fabric-shim": "^2.0.0",
+		"fabric-shim": "^2.5.2",
 		"fabric-contract-api": "^2.0.0"
 	}
 }

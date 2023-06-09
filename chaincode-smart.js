@@ -1,11 +1,4 @@
-/*
-# Copyright IBM Corp. All Rights Reserved.
-#
-# SPDX-License-Identifier: Apache-2.0
-*/
-
 const shim = require('fabric-shim');
-const util = require('util');
 
 var serbetChainCode = class {
     async Init(stub) {
