@@ -26,18 +26,23 @@ var serbetChainCode = class {
     }
 
     async invoke(stub, args) {
+	console.log("DEBUG - " + args);
         if (args.length != 3) {
             throw new Error('Incorrect number of arguments. Expecting 3');
         }
 
         let jsonData = args[0];
         let tableName = args[1];
-        let alpuid  = args[3];
+        let alpuid  = args[2];
+        
+        console.log("DEBUG - KEY: + " + alpuid + tableName);
 
         await stub.putState(alpuid + tableName, jsonData);
     }
 
     async query(stub, args) {
+	    console.log("DEBUG - " + args);
+
         if (args.length != 2) {
             throw new Error('Incorrect number of arguments. Expecting name of the person to query')
         }
@@ -47,6 +52,8 @@ var serbetChainCode = class {
         let alpuid = args[1];
 
         let key = alpuid + tableName;
+
+        console.log("DEBUG - KEY: + " + alpuid + tableName);
 
         let Avalbytes = await stub.getState(key);
 
